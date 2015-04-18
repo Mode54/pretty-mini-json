@@ -10,22 +10,22 @@ $ npm install pretty-mini-json
 
 ## Usage
 
-###Basic JSON minify
+Basic JSON minify
 ```sh
 $ pretty-mini-json my_file.json
 ```
 
-###Basic JSON prettify
+Basic JSON prettify
 ```sh
 $ pretty-mini-json -p my_file.json
 ```
 
-###JSON minify to file
+JSON minify my_file.json to file named my_file.min.json
 ```sh
 $ pretty-mini-json -o my_file.min.json my_file.json
 ```
 
-###JSON prettify to file
+JSON prettify my_file.min.json to file named my_file.json
 ```sh
-$ pretty-mini-json -po my_file.min.json my_file.json
+$ pretty-mini-json -po my_file.json my_file.min.json
 ```
