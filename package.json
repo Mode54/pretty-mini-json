@@ -19,12 +19,12 @@
     "url": "https://github.com/Mode54/pretty-mini-json/issues"
   },
   "main": "./pretty-mini-json.js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "dependencies": {
     "commander": "2.8.x"
   },
-  "license" : "MIT",
+  "license": "MIT",
   "bin": {
-      "pretty-mini-json": "pretty-mini-json.js"
+    "pretty-mini-json": "pretty-mini-json.js"
   }
 }
