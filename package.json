@@ -10,7 +10,7 @@
     "pretty",
     "prettify"
   ],
-  "author": "Mode54",
+  "author": "Mode54 <henry@mode54.com> (http://Mode54.com)",
   "repository": {
     "type": "git",
     "url": "git://github.com/Mode54/pretty-mini-json.git"
