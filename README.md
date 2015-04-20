@@ -15,7 +15,7 @@ $ [sudo] npm install -g pretty-mini-json
 pretty-mini-json [ options... ] [ filename ]
 ```
 
-*filename* should be the last argument and should name the file from which to read the JSON data. If you don't specify it, it will read code from STDIN.
+*filename* should be the last argument and should name the file from which to read the JSON data. If you don't specify it, it will read data from STDIN.
 
 **Options**
 
