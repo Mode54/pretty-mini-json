@@ -12,10 +12,17 @@ var
 program
     .version(pkgJSON.version)
     .usage("[options] [file ...]")
-    .option("-p, --pretty", "prettify compressed JSON", "true")
-    .option("-o, --outputFile <outputFile>", "output file name")
-    .option("-v, --verbose", "", "true")
+    .description("A simple CLI tool to shrink/minify or prettify JSON data.")
+    .option("-p, --pretty", "prettify JSON data", "true")
+    .option("-o, --outputFile <file>", "write output to <file> instead of stdout")
+    .option("-v, --version", "print version information and exit", pkgJSON.version)
+    .option("-V, --verbose", "makes stdout more verbose/talkative. Mostly useful for debugging.", "true")
     .parse(process.argv);
+
+if(program.version){
+    console.log(program.version);
+    process.exit(1);
+}
 
 if(program.pretty){ prettify = true; }
 if(program.verbose){ verbose = true; }
