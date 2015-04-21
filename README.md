@@ -19,21 +19,20 @@ pretty-mini-json [ options... ] [ filename ]
 
 **Options**
 
-```sh
+```
 $ pretty-mini-json --help
 
-  Usage: pretty-mini-json [options] [file ...]
+	Usage: pretty-mini-json [options] [file ...]
 
-  A simple CLI tool to shrink/minify or prettify JSON data.
+	A simple CLI tool to shrink/minify or prettify JSON data.
 
-  Options:
+	Options:
 
-    -h, --help               output usage information
-    -V, --version            output the version number
-    -p, --pretty             prettify JSON data
-    -o, --outputFile <file>  write output to <file> instead of stdout
-    -v, --version            print version information and exit
-    -V, --verbose            makes stdout more verbose/talkative. Mostly useful for debugging.
+	-h, --help               output usage information
+	-V, --version            output the version number
+	-p, --pretty             prettify JSON data
+	-o, --outputFile <file>  write output to <file> instead of stdout
+	-v, --verbose            makes stdout more verbose/talkative. Mostly useful for debugging.
 ```
 
 ## Examples

@@ -14,12 +14,19 @@ program
     .usage("[options] [file ...]")
     .description("A simple CLI tool to shrink/minify or prettify JSON data.")
     .option("-p, --pretty", "prettify JSON data", "true")
-    .option("-o, --outputFile <file>", "write output to <file> instead of stdout")
-    .option("-v, --version", "print version information and exit", pkgJSON.version)
-    .option("-V, --verbose", "makes stdout more verbose/talkative. Mostly useful for debugging.", "true")
+    .option(
+        "-o, --outputFile <file>",
+        "write output to <file> instead of stdout"
+    )
+    .option(
+        "-v, --verbose",
+        "makes stdout more verbose/talkative. Mostly useful for debugging.",
+        "true"
+    )
     .parse(process.argv);
 
-if(program.version){
+// extra checks to avoid version & verbose conflict bug
+if(!program.verbose && program.version && typeof program.version!="function"){
     console.log(program.version);
     process.exit(1);
 }
