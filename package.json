@@ -19,7 +19,7 @@
     "url": "https://github.com/Mode54/pretty-mini-json/issues"
   },
   "main": "./pretty-mini-json.js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "dependencies": {
     "commander": "2.8.x"
   },
