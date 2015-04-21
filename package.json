@@ -8,7 +8,10 @@
     "minify",
     "shrink",
     "pretty",
-    "prettify"
+    "prettify",
+    "pipe",
+    "stdout",
+    "stdin"
   ],
   "author": "Mode54 <henry@mode54.com> (http://Mode54.com)",
   "repository": {
