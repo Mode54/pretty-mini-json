@@ -28,6 +28,7 @@
   },
   "license": "MIT",
   "bin": {
-    "pretty-mini-json": "pretty-mini-json.js"
+    "pretty-mini-json": "pretty-mini-json.js",
+    "pmj" : "pretty-mini-json.js"
   }
 }

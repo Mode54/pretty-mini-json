@@ -10,9 +10,10 @@ $ [sudo] npm install -g pretty-mini-json
 ```
 
 ## Usage
+You can now call pretty-mini-json from anywhere using eiter `pmj` or the full name `pretty-mini-json`. I prefer the short name.
 
 ```sh
-pretty-mini-json [ options... ] [ filename ]
+pmj [ options... ] [ filename ]
 ```
 
 *filename* should be the last argument and should name the file from which to read the JSON data. If you don't specify it, it will read data from STDIN.
@@ -20,9 +21,9 @@ pretty-mini-json [ options... ] [ filename ]
 **Options**
 
 ```
-$ pretty-mini-json --help
+$ pmj --help
 
-	Usage: pretty-mini-json [options] [file ...]
+	Usage: pmj [options] [file ...]
 
 	A simple CLI tool to shrink/minify or prettify JSON data.
 
@@ -43,28 +44,28 @@ Here are some example calls using *my_file.json* and *my_file.min.json* as examp
 
 Output minified version to stdout.
 ```sh
-$ pretty-mini-json my_file.json
+$ pmj my_file.json
 ```
 
 **Basic JSON prettify**
 
 Output prettified version to stdout.
 ```sh
-$ pretty-mini-json -p my_file.json
+$ pmj -p my_file.json
 ```
 
 **JSON minify to output file**
 
 Output minified version to an output file instead of stdout.
 ```sh
-$ pretty-mini-json -o my_file.min.json my_file.json
+$ pmj -o my_file.min.json my_file.json
 ```
 
 **JSON prettify to output file**
 
 Output prettified version to an output file instead of stdout.
 ```sh
-$ pretty-mini-json -po my_file.json my_file.min.json
+$ pmj -po my_file.json my_file.min.json
 ```
 
 # Author
