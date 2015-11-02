@@ -1,5 +1,10 @@
 # Pretty Mini JSON
 
+[![NPM Version](http://img.shields.io/npm/v/pretty-mini-json.svg?style=flat)](https://www.npmjs.org/package/pretty-mini-json)
+[![NPM Downloads](https://img.shields.io/npm/dt/pretty-mini-json.svg?style=flat)](https://www.npmjs.org/package/pretty-mini-json)
+[![License](http://img.shields.io/badge/License-MIT-blue.svg)](http://opensource.org/licenses/MIT)
+[![Dependency Status](https://david-dm.org/mode54/pretty-mini-json.svg)](https://david-dm.org/mode54/pretty-mini-json)
+
 A simple CLI tool to shrink/minify or prettify [JSON](http://json.org) data.
 
 ## Installation
