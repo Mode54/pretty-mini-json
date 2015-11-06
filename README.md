@@ -5,7 +5,9 @@
 [![Dependency Status](https://img.shields.io/david/mode54/pretty-mini-json.svg)](https://david-dm.org/mode54/pretty-mini-json)
 [![License](https://img.shields.io/npm/l/pretty-mini-json.svg)](http://opensource.org/licenses/MIT)
 
-A simple CLI tool to shrink/minify or prettify [JSON](http://json.org) data.
+A simple CLI tool to shrink/minify or prettify [JSON](http://json.org) data from stdin, file or url.
+
+[![NPM](https://nodei.co/npm/pretty-mini-json.png?downloadRank=true&stars=true)](https://nodei.co/npm/pretty-mini-json/)
 
 ## Installation
 Install this globally and you'll have access to the Pretty Mini JSON command anywhere on your system.
@@ -18,17 +20,17 @@ $ [sudo] npm install -g pretty-mini-json
 You can now call pretty-mini-json from anywhere using eiter `pmj` or the full name `pretty-mini-json`. I prefer the short name.
 
 ```sh
-pmj [ options... ] [ filename ]
+pmj [ options... ] [ filename | url ]
 ```
 
-*filename* should be the last argument and should name the file from which to read the JSON data. If you don't specify it, it will read data from STDIN.
+*filename* or *url* should be the last argument and should name the file or url from which to read the JSON data. If you don't specify it, it will read data from STDIN.
 
 **Options**
 
 ```
 $ pmj --help
 
-	Usage: pmj [options] [file ...]
+	Usage: pmj [options] [file | url ...]
 
 	A simple CLI tool to shrink/minify or prettify JSON data.
 
@@ -71,6 +73,15 @@ $ pmj -o my_file.min.json my_file.json
 Output prettified version to an output file instead of stdout.
 ```sh
 $ pmj -po my_file.json my_file.min.json
+```
+
+**Support for URL data source**
+
+Replace file with a URL and pretty-mini-json will download and parse it.
+
+Output minified version of JSON data from http endpoint to stdout.
+```sh
+$ pmj https://raw.githubusercontent.com/Mode54/pretty-mini-json/master/package.json
 ```
 
 # Author
