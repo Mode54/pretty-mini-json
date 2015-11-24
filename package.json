@@ -1,6 +1,6 @@
 {
   "name": "pretty-mini-json",
-  "description": "A simple CLI tool to shrink/minify or prettify JSON data.",
+  "description": "A simple CLI tool to shrink/minify or prettify JSON data from stdin, file or url.",
   "keywords": [
     "cli",
     "json",
@@ -27,7 +27,7 @@
   "version": "1.1.0",
   "dependencies": {
     "commander": "2.9.x",
-    "request": "2.65.x"
+    "request": "2.67.x"
   },
   "license": "MIT",
   "bin": {
