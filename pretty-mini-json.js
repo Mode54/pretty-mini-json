@@ -13,7 +13,7 @@ var
 program
     .version(pkgJSON.version)
     .usage("[options] [file | url ...]")
-    .description("A simple CLI tool to shrink/minify or prettify JSON data.")
+    .description(pkgJSON.description)
     .option("-p, --pretty", "prettify JSON data", "true")
     .option(
         "-o, --outputFile <file>",
