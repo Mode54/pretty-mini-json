@@ -1,19 +1,21 @@
 {
   "name": "pretty-mini-json",
-  "description": "A simple CLI tool to shrink/minify or prettify JSON data.",
+  "description": "A simple CLI tool to shrink/minify or prettify JSON data from stdin, file or url.",
   "keywords": [
     "cli",
-    "util",
     "json",
     "minify",
+    "prettify",
     "shrink",
     "pretty",
-    "prettify",
+    "util",
     "pipe",
     "stdout",
-    "stdin"
+    "stdin",
+    "http",
+    "url"
   ],
-  "author": "Mode54 <henry@mode54.com> (http://Mode54.com)",
+  "author": "Mode54 <info@mode54.com> (http://Mode54.com)",
   "repository": {
     "type": "git",
     "url": "git://github.com/Mode54/pretty-mini-json.git"
@@ -22,13 +24,14 @@
     "url": "https://github.com/Mode54/pretty-mini-json/issues"
   },
   "main": "./pretty-mini-json.js",
-  "version": "1.0.4",
+  "version": "1.1.1",
   "dependencies": {
-    "commander": "2.8.x"
+    "commander": "2.9.x",
+    "request": "2.67.x"
   },
   "license": "MIT",
   "bin": {
     "pretty-mini-json": "pretty-mini-json.js",
-    "pmj" : "pretty-mini-json.js"
+    "pmj": "pretty-mini-json.js"
   }
 }

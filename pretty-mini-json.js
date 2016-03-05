@@ -3,6 +3,7 @@
 var
     fs = require("fs"),
     program = require("commander"),
+    request = require("request"),
     pkgJSON = require("./package.json"),
     stdin = process.stdin,
     stdinData = "",
@@ -11,8 +12,8 @@ var
 
 program
     .version(pkgJSON.version)
-    .usage("[options] [file ...]")
-    .description("A simple CLI tool to shrink/minify or prettify JSON data.")
+    .usage("[options] [file | url ...]")
+    .description(pkgJSON.description)
     .option("-p, --pretty", "prettify JSON data", "true")
     .option(
         "-o, --outputFile <file>",
@@ -34,30 +35,53 @@ if(!program.verbose && program.version && typeof program.version!="function"){
 if(program.pretty){ prettify = true; }
 if(program.verbose){ verbose = true; }
 
-message("Check for file paths...");
+message("Check for data source(s)...");
 
 if(stdin.isTTY){
-    if(program.args){
+    if(program.args.length>0){
 
-        message("Found file paths: " + program.args);
+        message("Found data source(s): " + program.args);
 
-        program.args.forEach(function(arg){
+        program.args.forEach(function(arg, indx){
+            var readCallback;
 
-            message("Reading file: " + arg);
+            if(isValidURL(arg)){
+                message("Requesting file: " + arg);
 
-            fs.readFile( arg, function (err, data) {
+                request(
+                    arg,
+                    function(error, response, body){
+                        if(!error && response.statusCode == 200){
+                            prettyMiniIt(body);
+                        }
+                        else{
+                            console.error("Can't retrieve file from: " + arg);
+                            process.exit(1);
+                        }
+                    }
+                );
+            }
+            else{
+                message("Reading file ("+indx+"): " + arg);
 
-                if(err){
-                    console.error("Can't read file: " + arg);
-                    process.exit(1);
+                readCallback = function (err, data) {
+                    if(err){
+                        console.error("Can't read file: " + arg);
+                    }
+                    else if(indx>0){
+                        prettyMiniIt(data.toString(), indx);
+                    }
+                    else{
+                        prettyMiniIt(data.toString());
+                    }
                 }
 
-                prettyMiniIt(data.toString());
-
-            });
-
+                fs.readFile(arg, readCallback);
+            }
         });
-
+    }
+    else{
+        console.error("Missing source data.");
     }
 }
 else{
@@ -80,8 +104,8 @@ else{
 
 }
 
-function prettyMiniIt(data){
-    var jsonData, output;
+function prettyMiniIt(data, suffix){
+    var jsonData, output, outputFile;
 
     try{
         jsonData = JSON.parse(data);
@@ -89,7 +113,7 @@ function prettyMiniIt(data){
     catch(e){
         console.error("Can't parse JSON data");
         console.error(e);
-        process.exit(1);
+        return;
     }
 
     output = prettify
@@ -98,14 +122,27 @@ function prettyMiniIt(data){
 
     if(program.outputFile){
         message("Writing output file...");
+        outputFile = program.outputFile;
 
-        fs.writeFile(program.outputFile, output, function(err2){
+        if(suffix){
+            outputFile = outputFile.split(".");
+
+            outputFile.splice(
+                outputFile.length-1,
+                0,
+                suffix
+            );
+
+            outputFile = outputFile.join(".");
+        }
+
+        fs.writeFile(outputFile, output, function(err2){
             if(err2){
                 console.error(err2);
                 process.exit(1);
             }
             else{
-                console.log("File saved as " + program.outputFile);
+                console.log("File saved as " + outputFile);
             }
         });
     }
@@ -118,4 +155,10 @@ function message(msg){
     if(verbose){
         console.log(msg);
     }
+}
+
+function isValidURL(str){
+	if(typeof str!=="string") return false;
+
+	return (/^([\w\+\.\-]+:)(?:\/\/([^\/?#:]*)(?::(\d+))?)?/).test(str);
 }
