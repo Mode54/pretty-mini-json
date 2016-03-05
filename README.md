@@ -10,13 +10,15 @@ $ [sudo] npm install -g pretty-mini-json
 ```
 
 ## Usage
-You can now call pretty-mini-json from anywhere using eiter `pmj` or the full name `pretty-mini-json`. I prefer the short name.
+You can now call pretty-mini-json from anywhere using either `pmj` or the full name `pretty-mini-json`. I prefer the short name.
+
 
 ```sh
 pmj [ options... ] [ filename ]
 ```
 
-*filename* should be the last argument and should name the file from which to read the JSON data. If you don't specify it, it will read data from STDIN.
+*filename* or *url* should be the last argument and should name the file or url from which to read the JSON data. If you don't specify it, it will try to read data from STDIN.
+
 
 **Options**
 
