@@ -66,14 +66,14 @@ $ pmj -p my_file.json
 
 Output minified version to an output file instead of stdout.
 ```sh
-$ pmj -o my_file.min.json my_file.json
+$ pmj my_file.json -o my_file.min.json
 ```
 
 **JSON prettify to output file**
 
 Output prettified version to an output file instead of stdout.
 ```sh
-$ pmj -po my_file.json my_file.min.json
+$ pmj -p my_file.min.json -o my_file.json
 ```
 
 **Support for URL data source**
