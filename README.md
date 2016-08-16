@@ -3,6 +3,7 @@
 [![NPM Version](http://img.shields.io/npm/v/pretty-mini-json.svg?style=flat)](https://www.npmjs.org/package/pretty-mini-json)
 [![NPM Downloads](https://img.shields.io/npm/dt/pretty-mini-json.svg?style=flat)](https://www.npmjs.org/package/pretty-mini-json)
 [![Dependency Status](https://img.shields.io/david/mode54/pretty-mini-json.svg)](https://david-dm.org/mode54/pretty-mini-json)
+[![Codacy Badge](https://img.shields.io/codacy/43ece80331c246179695e41f81eeffe2.svg)](https://www.codacy.com/app/Mode54/pretty-mini-json)
 [![License](https://img.shields.io/npm/l/pretty-mini-json.svg)](http://opensource.org/licenses/MIT)
 
 A simple CLI tool to shrink/minify or prettify [JSON](http://json.org) data from stdin, file or url.

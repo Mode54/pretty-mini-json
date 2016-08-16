@@ -51,7 +51,7 @@ if(stdin.isTTY){
                 request(
                     arg,
                     function(error, response, body){
-                        if(!error && response.statusCode == 200){
+                        if(!error && response.statusCode === 200){
                             prettyMiniIt(body);
                         }
                         else{
@@ -74,7 +74,7 @@ if(stdin.isTTY){
                     else{
                         prettyMiniIt(data.toString());
                     }
-                }
+                };
 
                 fs.readFile(arg, readCallback);
             }
@@ -158,7 +158,7 @@ function message(msg){
 }
 
 function isValidURL(str){
-	if(typeof str!=="string") return false;
+	if(typeof str!=="string"){ return false; }
 
 	return (/^([\w\+\.\-]+:)(?:\/\/([^\/?#:]*)(?::(\d+))?)?/).test(str);
 }
